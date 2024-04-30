@@ -1,36 +1,29 @@
 :root{ 
   --color1 : blue;
-  --color2: pink;
+  --color2: white;
   --trans: 0.5s linear;
+  --textStyle:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 *,::after,::before{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 html{
   scroll-behavior: smooth;
 }
+
 body {
+  width: 100vw;
+  height: 100vh;
     margin: auto;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     overflow: auto;
-    background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+    background: linear-gradient(250deg, var(--color2) 3%, var(--color2)38%, var(--color1) 68%, var(--color1) 98%);
     animation: gradient 15s ease infinite;
     background-size: 400% 400%;
     background-attachment: fixed;
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 0%;
-    }
-    50% {
-        background-position: 100% 100%;
-    }
-    100% {
-        background-position: 0% 0%;
-    }
 }
 
 .animateB {
@@ -58,52 +51,88 @@ body {
     animation: wave 20s -1s reverse infinite;
     opacity: 0.9;
 }
-
-@keyframes wave {
-    2% {
-        transform: translateX(1);
-    }
-
-    25% {
-        transform: translateX(-25%);
-    }
-
-    50% {
-        transform: translateX(-50%);
-    }
-
-    75% {
-        transform: translateX(-25%);
-    }
-
-    100% {
-        transform: translateX(1);
-    }
+.navContainer{
+  width: 70px;
+  height:100vh;
+  background: var(--color1);
+  transition: var(--trans)
 }
-header{
-  width: 100vw;
-  height: 100px;
-}
-
-.openNav{
-  width: 100px;
-  height: 50px;
+.openNavContainer{
+  width: fit-content;
+  height: fit-content;
+  border: none;
   background: transparent;
   font-size: 40px;
-  color: blue ;
-  border: none; 
-  text-align: start;
-  padding: 10px ;
+  color: var(--color2);
+  position: absolute;
+  bottom:3%;
+  left:5%;
 }
+[alt |= "HintAll Logo"]{
+  width: 70px;
+  height: 70px;
+}
+.newNavWidth{
+  width: 220px;
+}
+.hintAllName{
+  display: none;
   
-.navigationTitleHolder{
-  display: flex;
-  flex-direction: row;
-  gap: 25px;
 }
-.title{
-  font-size: 50px;
-  color: white;
-  margin-top: 10px;
+.hintAllNameDesign{
+  display: block;
+  font-size: 30px;
   font-weight: bold;
+  font-family: var(--textStyle);
+  color: var(--color2);
+  animation: fadeIn 5s;
+  
+}
+.logoNameHolderFlex{
+  display: flex;
+
+}
+.fadeOutText{
+  animation: fadeOut 5s; 
+}
+/* animation */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fadeOut{
+  0% { opacity:1 ; }
+  100% { opacity: 0; }
+}
+@keyframes wave {
+  2% {
+    transform: translateX(1);
+  }
+
+  25% {
+    transform: translateX(-25%);
+  }
+
+  50% {
+    transform: translateX(-50%);
+  }
+
+  75% {
+    transform: translateX(-25%);
+  }
+
+  100% {
+    transform: translateX(1);
+  }
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
 }
